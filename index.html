@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <meta name="theme-color" content="#14372c" /> -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="نور القرآن" />
+    <title>نور القرآن</title>
+    <meta name="description" content="أوقات الصلاة، قراءة القرآن الكريم والاستماع إليه بصوت نخبة من القرّاء." />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/logo.png" sizes="192x192" type="image/png" />
+    <link rel="icon" href="icons/logo.png" sizes="512x512" type="image/png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=40" />
+    <script src="i18n.js?v=2"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="appSidebar" data-i18n-aria="sidebar_aria" aria-label="التنقل الرئيسي">
+        <a class="brand" href="#home" data-route="home" data-i18n-aria="brand_aria" aria-label="نور القرآن - الرئيسية">
+          <span class="brand-mark" id="brandMark">
+            <img src="icons/logo.png" alt="">
+          </span>
+          <span><b id="brandName">نور القرآن</b> <small data-i18n="brand_tagline">رفيقك إلى النور</small></span>
+        </a>
+        <nav class="side-nav">
+          <button class="nav-item active" data-route="home"><span class="nav-icon" data-icon="home"></span> <span class="name" data-i18n="nav_home">الرئيسية</span></button>
+          <button class="nav-item" data-route="quran"><span class="nav-icon" data-icon="book"></span> <span class="name" data-i18n="nav_quran">القرآن الكريم</span></button>
+          <button class="nav-item" data-route="listen"><span class="nav-icon" data-icon="headphones"></span> <span class="name" data-i18n="nav_listen">الاستماع</span></button>
+          <button class="nav-item" data-route="prayer"><span class="nav-icon" data-icon="clock"></span> <span class="name" data-i18n="nav_prayer">أوقات الصلاة</span></button>
+          <button class="nav-item" data-route="favorites"><span class="nav-icon" data-icon="heart"></span> <span class="name" data-i18n="nav_favorites">المحفوظات</span></button>
+        </nav>
+        <div class="side-bottom">
+          <button class="nav-item" data-route="settings"><span class="nav-icon" data-icon="settings"></span> <span class="name" data-i18n="nav_settings">الإعدادات</span></button>
+          <div class="daily-card" lang="ar" dir="rtl">
+            <span class="spark" data-icon="sparkle"></span>
+            <p>﴿ وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا ﴾</p>
+            <small>المزمل · ٤</small>
+          </div>
+        </div>
+      </aside>
+      <main>
+        <header class="topbar">
+          <button class="menu-button" id="menuButton" data-icon="menu" data-i18n-aria="menu_aria" aria-label="فتح القائمة" aria-expanded="false" aria-controls="appSidebar"></button>
+          <div class="top-date">
+            <b id="hijriDate">١٧ ربيع الأول ١٤٤٨</b>
+            <span id="gregorianDate">الأحد، ٣٠ أغسطس ٢٠٢٦</span>
+          </div>
+          <div class="top-actions">
+            <button class="icon-button" id="themeQuick" data-icon="moon" data-i18n-aria="theme_aria" aria-label="تبديل المظهر"></button>
+            <button class="icon-button" data-route="settings" data-icon="settings" data-i18n-aria="settings_aria" aria-label="الإعدادات"></button>
+            <div class="location-pill" id="locationPill" role="button" tabindex="0">
+              <span data-icon="pin"></span>
+              <div>
+                <small data-i18n="your_location">موقعك</small>
+                <b>الرياض، السعودية</b><span class="location-source-badge" id="locationSourceBadge"></span>
+              </div>
+            </div>
+          </div>
+        </header>
+        <section class="page active" id="homePage">
+          <div class="home-grid">
+            <article class="hero-card">
+              <div class="hero-copy">
+                <span class="eyebrow" data-i18n="greeting">السلام عليكم ورحمة الله</span>
+                <h1><span data-i18n="hero_title">حيّ على</span> <em data-i18n="hero_em">الصلاة</em></h1>
+                <p>تبقّى على صلاة العصر</p>
+                <div class="countdown" id="countdown">
+                  <span>٠٠<small>ساعة</small></span>
+                  <i>:</i>
+                  <span>٠٠<small>دقيقة</small></span>
+                  <i>:</i>
+                  <span>٠٠<small>ثانية</small></span>
+                </div>
+                <button class="soft-button" data-route="prayer" data-i18n="view_all_times">عرض جميع الأوقات</button>
+              </div>
+              <div class="hero-ornament" aria-hidden="true">
+                <div class="sun-disc"></div>
+                <div class="mosque-line">
+                  <img src="icons/kaaba.png" alt="">
+                </div>
+              </div>
+            </article>
+            <article class="prayer-card" id="homePrayerCard" aria-live="polite">
+              <div class="section-head">
+                <div>
+                  <span class="eyebrow" id="homeTodayIn">اليوم في الرياض</span>
+                  <h2 data-i18n="prayer_times_heading">أوقات الصلاة</h2>
+                </div>
+                <button class="text-button" data-route="prayer" data-i18n="details">التفاصيل</button>
+              </div>
+              <div id="homePrayerList" class="prayer-list">
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line"></div>
+              </div>
+            </article>
+          </div>
+          <div class="section-head wide">
+            <div>
+              <span class="eyebrow" data-i18n="continue_journey">تابع رحلتك</span>
+              <h2 data-i18n="daily_wird">وردك اليومي</h2>
+            </div>
+            <button class="text-button" data-route="quran" data-i18n="open_mushaf">فتح المصحف</button>
+          </div>
+          <div class="reading-grid">
+            <article class="continue-card">
+              <div class="surah-medallion">يس</div>
+              <div>
+                <span class="eyebrow" data-i18n="last_read">آخر قراءة</span>
+                <h3>سورة يس</h3>
+                <p>الآية ٢٧ من ٨٣</p>
+                <div class="progress">
+                  <i style="width:32%"></i>
+                </div>
+              </div>
+              <button class="round-play" data-route="quran" data-i18n-aria="continue_aria" aria-label="متابعة القراءة">
+                <span class="directional-arrow" aria-hidden="true"></span>
+              </button>
+            </article>
+            <article class="khatma-card">
+              <div class="ring">
+                <strong>١٢</strong>
+                <small data-i18n="juz_unit">جزءًا</small>
+              </div>
+              <div>
+                <span class="eyebrow" data-i18n="khatma_current">ختمتك الحالية</span>
+                <h3><span id="khatmaPercent">٣٩٪</span> <span data-i18n="complete_suffix">مكتمل</span></h3>
+                <p data-i18n="khatma_tip">حافظ على وردك؛ ٦ صفحات اليوم</p>
+              </div>
+            </article>
+          </div>
+          <div class="section-head wide">
+            <div>
+              <span class="eyebrow" data-i18n="sweet_voices">أصوات ندية</span>
+              <h2 data-i18n="suggested_reciters">قرّاء مقترحون</h2>
+            </div>
+            <button class="text-button" data-route="listen" data-i18n="all_reciters">كل القرّاء</button>
+          </div>
+          <div class="reciters-strip" id="homeReciters"></div>
+        </section>
+        <section class="page" id="quranPage">
+          <div class="page-title">
+            <div>
+              <span class="eyebrow" data-i18n="book_of_allah">كتاب الله</span>
+              <h1 data-i18n="quran_title">القرآن الكريم</h1>
+              <p data-i18n="quran_subtitle">اقرأ وتدبّر، واحفظ موضعك للعودة إليه في أي وقت.</p>
+            </div>
+            <div class="completion">
+              <b>٣٩٪</b>
+              <span data-i18n="current_khatma">الختمة الحالية</span>
+            </div>
+          </div>
+          <div class="toolbar">
+            <label class="search">
+              <span data-icon="search"></span>
+              <input id="surahSearch" type="search" data-i18n-placeholder="search_surah_ph" placeholder="ابحث باسم السورة..." />
+            </label>
+            <div class="segmented">
+              <button class="active" id="tabSurahs" data-list-tab="surahs" data-i18n="tab_surahs">السور</button>
+              <button id="tabJuz" data-list-tab="juz" data-i18n="tab_juz">الأجزاء</button>
+              <button data-route="favorites" data-i18n="tab_favorites">المحفوظات</button>
+            </div>
+          </div>
+          <div class="surah-list" id="surahList"></div>
+        </section>
+        <section class="page" id="readerPage">
+          <div class="reader-top">
+            <button class="back-button" data-route="quran" data-i18n="back_to_surahs">العودة للسور</button>
+            <div>
+              <span id="readerMeta"></span>
+              <h1 id="readerTitle">—</h1>
+            </div>
+            <div class="font-control">
+              <button class="icon-button" id="fontButton" data-icon="textSize" data-i18n-aria="font_aria" aria-label="حجم الخط" aria-expanded="false" aria-controls="fontMenu"></button>
+              <div class="font-menu" id="fontMenu" hidden>
+                <button type="button" data-font-size="26">صغير</button>
+                <button type="button" data-font-size="31">متوسط</button>
+                <button type="button" data-font-size="38">كبير</button>
+              </div>
+            </div>
+          </div>
+          <article class="mushaf">
+            <div class="bismillah" hidden>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+            <div id="ayahText" class="ayah-text" aria-live="polite">
+              <p class="empty-inline" data-i18n="loading_ayahs">جاري تحميل الآيات...</p>
+            </div>
+            <div class="ayah-actions">
+              <button id="saveReading" data-i18n="save_position">حفظ الموضع</button>
+              <button id="listenCurrentSurah" data-i18n="listen_to_surah">استمع للسورة</button>
+              <button id="shareCurrentSurah" data-i18n="share_action">مشاركة</button>
+            </div>
+          </article>
+        </section>
+        <section class="page" id="listenPage">
+          <div class="page-title">
+            <div>
+              <span class="eyebrow" data-i18n="listen_heart">استمع بقلبك</span>
+              <h1 data-i18n="listen_title">الاستماع للقرآن</h1>
+              <p data-i18n="listen_subtitle">القرآن كاملًا بأصوات عشرة من نخبة قرّاء العالم الإسلامي.</p>
+            </div>
+          </div>
+          <div class="listen-toolbar">
+            <label class="search reciter-search">
+              <span data-icon="search"></span>
+              <input id="reciterSearch" type="search" data-i18n-placeholder="reciter_search_ph" placeholder="ابحث عن قارئ..." />
+            </label>
+            <label class="surah-picker">
+              <span data-i18n="surah_label">السورة</span>
+              <select id="listenSurah"></select>
+            </label>
+          </div>
+          <div class="reciters-grid" id="recitersGrid"></div>
+        </section>
+        <section class="page" id="prayerPage">
+          <div class="page-title">
+            <div>
+              <span class="eyebrow" data-i18n="precise_times">مواقيت دقيقة</span>
+              <h1 data-i18n="prayer_title">أوقات الصلاة</h1>
+              <p id="prayerLocationLabel" data-i18n="loading_location">جاري تحديد الموقع وطريقة الحساب...</p>
+            </div>
+            <div class="location-actions">
+              <button class="outline-button" id="useLocation"><span data-i18n="use_my_location">استخدام موقعي</span></button>
+              <button class="outline-button" id="pickLocationManually"><span data-i18n="choose_location">اختيار الموقع</span></button>
+            </div>
+          </div>
+          <div class="prayer-hero">
+            <div>
+              <span data-i18n="next_prayer">الصلاة القادمة</span>
+              <h2 id="nextPrayerName">—</h2>
+              <p><span data-i18n="remaining_word">متبقٍّ</span> <b id="prayerCountdown">—:—:—</b></p>
+            </div>
+            <div class="adhan-time">
+              <small data-i18n="adhan_time">وقت الأذان</small>
+              <strong id="nextPrayerTime">—:—</strong>
+              <span id="nextPrayerPeriod"></span>
+            </div>
+          </div>
+          <div class="week-prayers">
+            <div class="week-head">
+              <button id="previousDay" data-direction-icon="previous"></button>
+              <h3 id="prayerDateLabel">اليوم</h3>
+              <button id="nextDay" data-direction-icon="next"></button>
+            </div>
+            <div class="prayer-tiles" id="prayerTiles"></div>
+          </div>
+          <div class="info-grid">
+            <article>
+              <span data-icon="sunrise"></span>
+              <div>
+                <small data-i18n="sunrise_word">شروق الشمس</small>
+                <b id="sunriseInfo">—</b>
+              </div>
+            </article>
+            <article>
+              <span data-icon="moon"></span>
+              <div>
+                <small data-i18n="midnight_word">منتصف الليل</small>
+                <b id="midnightInfo">—</b>
+              </div>
+            </article>
+            <article>
+              <span class="qibla-arrow" id="qiblaArrow" data-icon="navigation"></span>
+              <div>
+                <small data-i18n="qibla_word">اتجاه القبلة</small>
+                <b id="qiblaInfo">—</b>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="page" id="favoritesPage">
+          <div class="page-title">
+            <div>
+              <span class="eyebrow" data-i18n="personal_space">مساحتك الخاصة</span>
+              <h1 data-i18n="fav_title">المحفوظات</h1>
+              <p data-i18n="fav_subtitle">الآيات والسور ومواضع القراءة التي حفظتها.</p>
+            </div>
+          </div>
+          <div id="favoritesContent"></div>
+        </section>
+        <section class="page" id="settingsPage">
+          <div class="page-title">
+            <div>
+              <span class="eyebrow" data-i18n="tailored">تجربة تناسبك</span>
+              <h1 data-i18n="settings_title">الإعدادات</h1>
+              <p data-i18n="settings_subtitle">خصّص مظهر قرائن ولغته وتفضيلات التنبيه.</p>
+            </div>
+          </div>
+          <div class="settings-layout">
+            <section class="settings-card">
+              <div class="settings-title">
+                <span data-icon="palette"></span>
+                <div>
+                  <h2 data-i18n="appearance_title">مظهر التطبيق</h2>
+                  <p data-i18n="appearance_subtitle">اختر الوضع المريح لعينيك</p>
+                </div>
+              </div>
+              <div class="theme-options">
+                <button data-theme-value="light"><i class="preview light-preview"></i> <b data-i18n="theme_light">نهاري</b></button>
+                <button data-theme-value="dark"><i class="preview dark-preview"></i> <b data-i18n="theme_dark">ليلي</b></button>
+                <button class="selected" data-theme-value="system"><i class="preview system-preview"></i> <b data-i18n="theme_system">النظام</b></button>
+              </div>
+            </section>
+            <section class="settings-card">
+              <div class="settings-title">
+                <span data-icon="language"></span>
+                <div>
+                  <h2 data-i18n="language_title">لغة التطبيق</h2>
+                  <p data-i18n="language_subtitle">اختر من أكثر من ٢٠ لغة</p>
+                </div>
+              </div>
+              <label class="select-label" style="margin-bottom: 14px;">
+                <span data-i18n="display_language">لغة العرض</span>
+                <select id="languageSelect"></select>
+              </label>
+              <label class="toggle-row">
+                <div>
+                  <b data-i18n="eastern_numerals">الأرقام العربية</b>
+                  <small data-i18n="eastern_numerals_desc">عرض الأوقات بالأرقام ١، ٢، ٣</small>
+                </div>
+                <input id="easternNumeralsToggle" type="checkbox" checked />
+              </label>
+            </section>
+            <section class="settings-card">
+              <div class="settings-title">
+                <span data-icon="bell"></span>
+                <div>
+                  <h2 data-i18n="prayer_notif_title">الصلاة والتنبيهات</h2>
+                  <p data-i18n="prayer_notif_subtitle">تحكّم في التذكيرات</p>
+                </div>
+              </div>
+              <label class="toggle-row">
+                <div>
+                  <b data-i18n="prayer_notif_toggle">تنبيه وقت الصلاة</b>
+                  <small data-i18n="prayer_notif_desc">إشعار نظام عند دخول الوقت</small>
+                </div>
+                <input id="prayerNotifications" type="checkbox" />
+              </label>
+              <label class="toggle-row">
+                <div>
+                  <b data-i18n="daily_reminder_toggle">تذكير الورد اليومي</b>
+                  <small data-i18n="daily_reminder_desc">تذكير يومي داخل التطبيق</small>
+                </div>
+                <input id="dailyReminder" type="checkbox" />
+              </label>
+              <label class="toggle-row">
+                <div>
+                  <b data-i18n="sunrise_notif_toggle">إشعار الشروق</b>
+                  <small data-i18n="sunrise_notif_desc">قبل الشروق بعشر دقائق</small>
+                </div>
+                <input id="sunriseNotification" type="checkbox" />
+              </label>
+            </section>
+            <section class="settings-card">
+              <div class="settings-title">
+                <span data-icon="pin"></span>
+                <div>
+                  <h2 data-i18n="location_calc_title">الموقع والحساب</h2>
+                  <p data-i18n="location_calc_subtitle">إعدادات المواقيت والبيانات</p>
+                </div>
+              </div>
+              <button class="setting-link" id="settingsLocation">
+                <span><b data-i18n="location_label">الموقع</b> <small id="settingsLocationText">الرياض، السعودية</small><span class="location-source-badge" id="settingsLocationSourceBadge"></span></span>
+                <i class="setting-chevron" aria-hidden="true"></i>
+              </button>
+              <label class="select-label method-label">
+                <span data-i18n="calc_method_label">طريقة حساب الصلاة</span>
+                <select id="calculationMethod">
+                  <option value="4" data-i18n="cm_umm_qura">جامعة أم القرى</option>
+                  <option value="3" data-i18n="cm_mwl">رابطة العالم الإسلامي</option>
+                  <option value="5" data-i18n="cm_egypt">الهيئة المصرية العامة للمساحة</option>
+                  <option value="2" data-i18n="cm_isna">الجمعية الإسلامية لأمريكا الشمالية</option>
+                  <option value="8" data-i18n="cm_gulf">منطقة الخليج</option>
+                  <option value="10" data-i18n="cm_qatar">دولة قطر</option>
+                  <option value="13" data-i18n="cm_turkey">رئاسة الشؤون الدينية التركية</option>
+                </select>
+              </label>
+              <button class="setting-link" id="clearLocalData">
+                <span><b data-i18n="clear_data">مسح البيانات المحلية</b> <small data-i18n="clear_data_desc">المحفوظات وموضع القراءة والإعدادات</small></span>
+                <i class="setting-chevron" aria-hidden="true"></i>
+              </button>
+              <button class="setting-link" id="openAbout">
+                <span><b data-i18n="about">حول نور القرآن</b> <small id="aboutVersion" data-i18n="about_version">الإصدار ٢.٠ · البيانات: Al Quran Cloud وAlAdhan</small></span>
+                <i class="setting-chevron" aria-hidden="true"></i>
+              </button>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="player" id="player" hidden>
+      <div class="player-surah"><img src="icons/images/Mishari.jpg" alt="صورة القارئ مشاري راشد العفاسي" decoding="async"></div>
+      <div class="track-info">
+        <b id="trackTitle">سورة الرحمن</b>
+        <span id="trackReciter">مشاري راشد العفاسي</span>
+        <small id="playerStatus" class="player-status" role="status" aria-live="polite"></small>
+      </div>
+      <audio id="audio" preload="metadata"></audio>
+      <div class="player-controls">
+        <button id="prevTrack" data-icon="skipBack" aria-label="الآية السابقة"></button>
+        <button id="playPause" class="main-play" data-icon="play" aria-label="تشغيل" aria-pressed="false"></button>
+        <button id="nextTrack" data-icon="skipForward" aria-label="الآية التالية"></button>
+        <button id="automatic" data-icon="autoplay" aria-label="تفعيل الانتقال التلقائي بين السور" aria-pressed="false"></button>
+      </div>
+      <div class="timeline">
+        <span id="currentTime">٠:٠٠</span>
+        <input id="seek" type="range" min="0" max="100" value="0">
+        <span id="duration">—:—</span>
+      </div>
+      <label class="volume-control" aria-label="مستوى الصوت"><span data-icon="volume"></span><input id="volume" type="range" min="0" max="1" step="0.05" value="1"></label>
+      <button class="close-player" id="closePlayer" data-icon="close" aria-label="إغلاق مشغّل التلاوة"></button>
+    </div>
+    <div class="mobile-backdrop" id="backdrop"></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="modal-overlay" id="locationModal" hidden>
+      <div class="modal-card">
+        <div class="modal-head">
+          <h2 data-i18n="choose_location">اختيار الموقع</h2>
+          <button class="icon-button" id="closeLocationModal" data-icon="close" data-i18n-aria="close_aria" aria-label="إغلاق"></button>
+        </div>
+        <button class="outline-button" id="modalUseCurrentLocation" style="width:100%"><span data-i18n="use_my_location">استخدام موقعي</span></button>
+        <label class="search">
+          <span data-icon="search"></span>
+          <input id="citySearchInput" type="search" data-i18n-placeholder="search_city_ph" placeholder="ابحث عن مدينة أو دولة...">
+        </label>
+        <div id="citySearchResults" class="city-results"></div>
+      </div>
+    </div>
+    <div class="modal-overlay" id="aboutModal" hidden>
+      <article class="modal-card about-card" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+        <div class="modal-head">
+          <h2 id="aboutTitle">حول نور القرآن</h2>
+          <button class="icon-button" id="closeAbout" data-icon="close" aria-label="إغلاق"></button>
+        </div>
+        <p>تطبيق للقراءة والاستماع وحفظ السور والآيات ومواضع القراءة، مع مواقيت الصلاة واتجاه القبلة.</p>
+        <p>الإصدار ٢.٠</p>
+        <p>مصادر البيانات: <a href="https://alquran.cloud" target="_blank" rel="noreferrer">Al Quran Cloud</a> و<a href="https://mp3quran.net" target="_blank" rel="noreferrer">MP3Quran</a> و<a href="https://aladhan.com" target="_blank" rel="noreferrer">AlAdhan</a>.</p>
+      </article>
+    </div>
+    <div class="modal-overlay" id="ayahActionsModal" hidden>
+      <article class="modal-card ayah-actions-card" role="dialog" aria-modal="true" aria-labelledby="ayahActionsTitle">
+        <div class="modal-head">
+          <h2 id="ayahActionsTitle" lang="ar" dir="rtl"></h2>
+          <button class="icon-button" id="closeAyahActions" data-icon="close" aria-label="إغلاق"></button>
+        </div>
+        <div class="ayah-context-actions">
+          <button type="button" id="saveAyahAction">حفظ الآية</button>
+          <button type="button" id="shareAyahAction">مشاركة الآية</button>
+        </div>
+      </article>
+    </div>
+    <footer class="source-credit">
+      <span data-i18n="footer_credit_1">النص والتلاوات عبر</span>
+      <a href="https://alquran.cloud" target="_blank" rel="noreferrer">Al Quran Cloud</a>
+      <span id="fullRecitationsCredit">· تلاوات السور الكاملة عبر</span>
+      <a href="https://mp3quran.net" target="_blank" rel="noreferrer">MP3Quran</a>
+      <span data-i18n="footer_credit_2">· المواقيت عبر</span>
+      <a href="https://aladhan.com" target="_blank" rel="noreferrer">AlAdhan</a>
+    </footer>
+    <script src="app.js?v=41"></script>
+  </body>
+</html>
