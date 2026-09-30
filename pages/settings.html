@@ -1,0 +1,106 @@
+          <div class="page-title">
+            <div>
+              <span class="eyebrow" data-i18n="tailored">تجربة تناسبك</span>
+              <h1 data-i18n="settings_title">الإعدادات</h1>
+              <p data-i18n="settings_subtitle">خصّص مظهر قرائن ولغته وتفضيلات التنبيه.</p>
+            </div>
+          </div>
+          <div class="settings-layout">
+            <section class="settings-card">
+              <div class="settings-title">
+                <span data-icon="palette"></span>
+                <div>
+                  <h2 data-i18n="appearance_title">مظهر التطبيق</h2>
+                  <p data-i18n="appearance_subtitle">اختر الوضع المريح لعينيك</p>
+                </div>
+              </div>
+              <div class="theme-options">
+                <button data-theme-value="light"><i class="preview light-preview"></i> <b data-i18n="theme_light">نهاري</b></button>
+                <button data-theme-value="dark"><i class="preview dark-preview"></i> <b data-i18n="theme_dark">ليلي</b></button>
+                <button class="selected" data-theme-value="system"><i class="preview system-preview"></i> <b data-i18n="theme_system">النظام</b></button>
+              </div>
+            </section>
+            <section class="settings-card">
+              <div class="settings-title">
+                <span data-icon="language"></span>
+                <div>
+                  <h2 data-i18n="language_title">لغة التطبيق</h2>
+                  <p data-i18n="language_subtitle">اختر من أكثر من ٢٠ لغة</p>
+                </div>
+              </div>
+              <label class="select-label" style="margin-bottom: 14px;">
+                <span data-i18n="display_language">لغة العرض</span>
+                <select id="languageSelect"></select>
+              </label>
+              <label class="toggle-row">
+                <div>
+                  <b data-i18n="eastern_numerals">الأرقام العربية</b>
+                  <small data-i18n="eastern_numerals_desc">عرض الأوقات بالأرقام ١، ٢، ٣</small>
+                </div>
+                <input id="easternNumeralsToggle" type="checkbox" checked />
+              </label>
+            </section>
+            <section class="settings-card">
+              <div class="settings-title">
+                <span data-icon="bell"></span>
+                <div>
+                  <h2 data-i18n="prayer_notif_title">الصلاة والتنبيهات</h2>
+                  <p data-i18n="prayer_notif_subtitle">تحكّم في التذكيرات</p>
+                </div>
+              </div>
+              <label class="toggle-row">
+                <div>
+                  <b data-i18n="prayer_notif_toggle">تنبيه وقت الصلاة</b>
+                  <small data-i18n="prayer_notif_desc">إشعار نظام عند دخول الوقت</small>
+                </div>
+                <input id="prayerNotifications" type="checkbox" />
+              </label>
+              <label class="toggle-row">
+                <div>
+                  <b data-i18n="daily_reminder_toggle">تذكير الورد اليومي</b>
+                  <small data-i18n="daily_reminder_desc">تذكير يومي داخل التطبيق</small>
+                </div>
+                <input id="dailyReminder" type="checkbox" />
+              </label>
+              <label class="toggle-row">
+                <div>
+                  <b data-i18n="sunrise_notif_toggle">إشعار الشروق</b>
+                  <small data-i18n="sunrise_notif_desc">قبل الشروق بعشر دقائق</small>
+                </div>
+                <input id="sunriseNotification" type="checkbox" />
+              </label>
+            </section>
+            <section class="settings-card">
+              <div class="settings-title">
+                <span data-icon="pin"></span>
+                <div>
+                  <h2 data-i18n="location_calc_title">الموقع والحساب</h2>
+                  <p data-i18n="location_calc_subtitle">إعدادات المواقيت والبيانات</p>
+                </div>
+              </div>
+              <button class="setting-link" id="settingsLocation">
+                <span><b data-i18n="location_label">الموقع</b> <small id="settingsLocationText">الرياض، السعودية</small><span class="location-source-badge" id="settingsLocationSourceBadge"></span></span>
+                <i class="setting-chevron" aria-hidden="true"></i>
+              </button>
+              <label class="select-label method-label">
+                <span data-i18n="calc_method_label">طريقة حساب الصلاة</span>
+                <select id="calculationMethod">
+                  <option value="4" data-i18n="cm_umm_qura">جامعة أم القرى</option>
+                  <option value="3" data-i18n="cm_mwl">رابطة العالم الإسلامي</option>
+                  <option value="5" data-i18n="cm_egypt">الهيئة المصرية العامة للمساحة</option>
+                  <option value="2" data-i18n="cm_isna">الجمعية الإسلامية لأمريكا الشمالية</option>
+                  <option value="8" data-i18n="cm_gulf">منطقة الخليج</option>
+                  <option value="10" data-i18n="cm_qatar">دولة قطر</option>
+                  <option value="13" data-i18n="cm_turkey">رئاسة الشؤون الدينية التركية</option>
+                </select>
+              </label>
+              <button class="setting-link" id="clearLocalData">
+                <span><b data-i18n="clear_data">مسح البيانات المحلية</b> <small data-i18n="clear_data_desc">المحفوظات وموضع القراءة والإعدادات</small></span>
+                <i class="setting-chevron" aria-hidden="true"></i>
+              </button>
+              <button class="setting-link" id="openAbout">
+                <span><b data-i18n="about">حول نور القرآن</b> <small id="aboutVersion" data-i18n="about_version">الإصدار ٢.٠ · البيانات: Al Quran Cloud وAlAdhan</small></span>
+                <i class="setting-chevron" aria-hidden="true"></i>
+              </button>
+            </section>
+          </div>

@@ -1,0 +1,54 @@
+          <div class="page-title">
+            <div>
+              <span class="eyebrow" data-i18n="precise_times">مواقيت دقيقة</span>
+              <h1 data-i18n="prayer_title">أوقات الصلاة</h1>
+              <p id="prayerLocationLabel" data-i18n="loading_location">جاري تحديد الموقع وطريقة الحساب...</p>
+            </div>
+            <div class="location-actions">
+              <button class="outline-button" id="useLocation"><span data-i18n="use_my_location">استخدام موقعي</span></button>
+              <button class="outline-button" id="pickLocationManually"><span data-i18n="choose_location">اختيار الموقع</span></button>
+            </div>
+          </div>
+          <div class="prayer-hero">
+            <div>
+              <span data-i18n="next_prayer">الصلاة القادمة</span>
+              <h2 id="nextPrayerName">—</h2>
+              <p><span data-i18n="remaining_word">متبقٍّ</span> <b id="prayerCountdown">—:—:—</b></p>
+            </div>
+            <div class="adhan-time">
+              <small data-i18n="adhan_time">وقت الأذان</small>
+              <strong id="nextPrayerTime">—:—</strong>
+              <span id="nextPrayerPeriod"></span>
+            </div>
+          </div>
+          <div class="week-prayers">
+            <div class="week-head">
+              <button id="previousDay" data-direction-icon="previous"></button>
+              <h3 id="prayerDateLabel">اليوم</h3>
+              <button id="nextDay" data-direction-icon="next"></button>
+            </div>
+            <div class="prayer-tiles" id="prayerTiles"></div>
+          </div>
+          <div class="info-grid">
+            <article>
+              <span data-icon="sunrise"></span>
+              <div>
+                <small data-i18n="sunrise_word">شروق الشمس</small>
+                <b id="sunriseInfo">—</b>
+              </div>
+            </article>
+            <article>
+              <span data-icon="moon"></span>
+              <div>
+                <small data-i18n="midnight_word">منتصف الليل</small>
+                <b id="midnightInfo">—</b>
+              </div>
+            </article>
+            <article>
+              <span class="qibla-arrow" id="qiblaArrow" data-icon="navigation"></span>
+              <div>
+                <small data-i18n="qibla_word">اتجاه القبلة</small>
+                <b id="qiblaInfo">—</b>
+              </div>
+            </article>
+          </div>

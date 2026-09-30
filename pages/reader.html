@@ -1,0 +1,26 @@
+          <div class="reader-top">
+            <button class="back-button" data-route="quran" data-i18n="back_to_surahs">العودة للسور</button>
+            <div>
+              <span id="readerMeta"></span>
+              <h1 id="readerTitle">—</h1>
+            </div>
+            <div class="font-control">
+              <button class="icon-button" id="fontButton" data-icon="textSize" data-i18n-aria="font_aria" aria-label="حجم الخط" aria-expanded="false" aria-controls="fontMenu"></button>
+              <div class="font-menu" id="fontMenu" hidden>
+                <button type="button" data-font-size="26">صغير</button>
+                <button type="button" data-font-size="31">متوسط</button>
+                <button type="button" data-font-size="38">كبير</button>
+              </div>
+            </div>
+          </div>
+          <article class="mushaf">
+            <div class="bismillah" hidden>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+            <div id="ayahText" class="ayah-text" aria-live="polite">
+              <p class="empty-inline" data-i18n="loading_ayahs">جاري تحميل الآيات...</p>
+            </div>
+            <div class="ayah-actions">
+              <button id="saveReading">تنزيل السورة</button>
+              <button id="listenCurrentSurah" data-i18n="listen_to_surah">استمع للسورة</button>
+              <button id="shareCurrentSurah" data-i18n="share_action">مشاركة</button>
+            </div>
+          </article>
