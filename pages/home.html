@@ -1,0 +1,80 @@
+          <div class="home-grid">
+            <article class="hero-card">
+              <div class="hero-copy">
+                <span class="eyebrow" data-i18n="greeting">السلام عليكم ورحمة الله</span>
+                <h1><span data-i18n="hero_title">حيّ على</span> <em data-i18n="hero_em">الصلاة</em></h1>
+                <p>تبقّى على صلاة العصر</p>
+                <div class="countdown" id="countdown">
+                  <span>٠٠<small>ساعة</small></span>
+                  <i>:</i>
+                  <span>٠٠<small>دقيقة</small></span>
+                  <i>:</i>
+                  <span>٠٠<small>ثانية</small></span>
+                </div>
+                <button class="soft-button" data-route="prayer" data-i18n="view_all_times">عرض جميع الأوقات</button>
+              </div>
+              <div class="hero-ornament" aria-hidden="true">
+                <div class="sun-disc"></div>
+                <div class="mosque-line">
+                  <img src="icons/kaaba.png" alt="">
+                </div>
+              </div>
+            </article>
+            <article class="prayer-card" id="homePrayerCard" aria-live="polite">
+              <div class="section-head">
+                <div>
+                  <span class="eyebrow" id="homeTodayIn">اليوم في الرياض</span>
+                  <h2 data-i18n="prayer_times_heading">أوقات الصلاة</h2>
+                </div>
+                <button class="text-button" data-route="prayer" data-i18n="details">التفاصيل</button>
+              </div>
+              <div id="homePrayerList" class="prayer-list">
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line"></div>
+              </div>
+            </article>
+          </div>
+          <div class="section-head wide">
+            <div>
+              <span class="eyebrow" data-i18n="continue_journey">تابع رحلتك</span>
+              <h2 data-i18n="daily_wird">وردك اليومي</h2>
+            </div>
+            <button class="text-button" data-route="quran" data-i18n="open_mushaf">فتح المصحف</button>
+          </div>
+          <div class="reading-grid">
+            <article class="continue-card">
+              <div class="surah-medallion">يس</div>
+              <div>
+                <span class="eyebrow" data-i18n="last_read">آخر قراءة</span>
+                <h3>سورة يس</h3>
+                <p>الآية ٢٧ من ٨٣</p>
+                <div class="progress">
+                  <i style="width:32%"></i>
+                </div>
+              </div>
+              <button class="round-play" data-route="quran" data-i18n-aria="continue_aria" aria-label="متابعة القراءة">
+                <span class="directional-arrow" aria-hidden="true"></span>
+              </button>
+            </article>
+            <article class="khatma-card">
+              <div class="ring">
+                <strong>١٢</strong>
+                <small data-i18n="juz_unit">جزءًا</small>
+              </div>
+              <div>
+                <span class="eyebrow" data-i18n="khatma_current">ختمتك الحالية</span>
+                <h3><span id="khatmaPercent">٣٩٪</span> <span data-i18n="complete_suffix">مكتمل</span></h3>
+                <p data-i18n="khatma_tip">حافظ على وردك؛ ٦ صفحات اليوم</p>
+              </div>
+            </article>
+          </div>
+          <div class="section-head wide">
+            <div>
+              <span class="eyebrow" data-i18n="sweet_voices">أصوات ندية</span>
+              <h2 data-i18n="suggested_reciters">قرّاء مقترحون</h2>
+            </div>
+            <button class="text-button" data-route="listen" data-i18n="all_reciters">كل القرّاء</button>
+          </div>
+          <div class="reciters-strip" id="homeReciters"></div>
+        
